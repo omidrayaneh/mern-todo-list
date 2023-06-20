@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from "react-router-dom"
 import axios from 'axios';
 import Input from './Input';
 import ListTodo from './ListTodo';
@@ -34,9 +35,9 @@ class Todo extends Component {
   render() {
     let { todos } = this.state;
     return (
-      <div>
-        <h1>My Todo(s)</h1>
-        <Input getTodos={this.getTodos} />
+      <div className="">
+        <h1>My Todo(s) <Link  to="/" >Home</Link></h1>
+        <Input className="todo_input" getTodos={this.getTodos} />
         <ListTodo todos={todos} deleteTodo={this.deleteTodo} />
       </div>
     );

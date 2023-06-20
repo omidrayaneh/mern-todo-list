@@ -1,11 +1,18 @@
-import React from 'react';
-import Todo from './components/Todo';
-import './App.css';
-const App = () => {
+import { Route, Routes } from "react-router-dom";
+import { Login, Register,TodoList,Home } from "./pages";
+// import Home from "./pages/Home";
+
+function App() {
   return (
     <div className="App">
-      <Todo />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/todos" element={<TodoList />} />
+      </Routes>
     </div>
   );
-};
+}
+
 export default App;
